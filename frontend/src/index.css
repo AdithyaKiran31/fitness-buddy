@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --font-display: 'Rajdhani', 'Segoe UI', sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.fitness-grid {
+  background-image:
+    linear-gradient(to right, rgb(30 41 59 / 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(30 41 59 / 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgb(16 185 129 / 0.12), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgb(6 182 212 / 0.12), transparent 35%);
+  background-size:
+    34px 34px,
+    34px 34px,
+    100% 100%,
+    100% 100%;
+}
+
+.animate-slide-up {
+  animation: slide-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.message-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: message-enter 520ms ease-out forwards;
+}
+
+.logo-ring {
+  box-shadow:
+    inset 0 0 0 1px rgb(110 231 183 / 0.15),
+    0 0 22px rgb(16 185 129 / 0.2);
+}
+
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(45 212 191 / 0.55) rgb(15 23 42 / 0.8);
+}
+
+.chat-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: rgb(15 23 42 / 0.7);
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(45 212 191 / 0.75), rgb(20 184 166 / 0.35));
+  border-radius: 9999px;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes message-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
